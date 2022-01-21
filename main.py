@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import os
 import pickle
+import string
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
