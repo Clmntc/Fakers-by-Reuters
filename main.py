@@ -32,7 +32,8 @@ def predict():
     tokens = word_tokenize(nom)
     nom = " ".join([ps.stem(word) for word in tokens if word not in stopwords_En])
     input = [nom]
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(input))
+    prediction = model.predict(input)
+    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(prediction))
     # return render_template("index.html", user_image = real_news_img)
 
 if __name__ == "__main__":
