@@ -3,6 +3,7 @@ import os
 import pickle
 import nltk
 from nltk.corpus import stopwords
+stopwords_En = nltk.corpus.stopwords.words('english')
 ps = nltk.PorterStemmer()
 # Modèle + Matrice de fonctionnalités TF-IDF
 from sklearn.linear_model import LogisticRegression
