@@ -22,5 +22,22 @@ app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
 def index():
     return render_template('index.html') 
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    nom = request.form["content"]
+    fake_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Fake_news.png')
+    real_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Real_news.png')
+    nom = "".join([word.lower() for word in nom if word not in string.punctuation])
+    tokens = word_tokenize(nom)
+    nom = " ".join([ps.stem(word) for word in tokens if word not in stopwords_En])
+    input = [nom]
+    prediction = model.predict(input)
+    if prediction == 1:
+        return render_template("index.html", user_image = fake_news_img)
+    if prediction == 0:
+        return render_template("index.html", user_image = real_news_img)
+    else:
+        pass
+
 if __name__ == "__main__":
     app.run(debug=True)
