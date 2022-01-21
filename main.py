@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template
 import os
 import pickle
-
+from sklearn.linear_model import LogisticRegression
+from sklearn.feature_extraction.text import TfidfVectorizer
+vectorizer = TfidfVectorizer(stop_words='english',max_df=0.7)
 
 PEOPLE_FOLDER = os.path.join('static')
 
