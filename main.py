@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import os
 import pickle
 import nltk
+from nltk.corpus import stopwords
 ps = nltk.PorterStemmer()
 # Modèle + Matrice de fonctionnalités TF-IDF
 from sklearn.linear_model import LogisticRegression
