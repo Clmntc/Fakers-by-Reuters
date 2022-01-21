@@ -15,12 +15,11 @@
                     <label class="input"><textarea name="content" class="input__field" type="text" placeholder="Entre ton texte ici"></textarea></label>
                     <button>Fake or not ?</button>
                     </form>
-                    <form action="{{ url_for('index')}}"method="get">
                     <button>Reset</button>
                     </form>
                 </div>
           <br>
-          <img src="{{ user_image }}">
+          {{ prediction_text }}
           </div>
           <p style="color:rgb(54, 54, 54);font-size:13px;"><dfn>Made by YAC Agency</dfn></p> 
         </div>
