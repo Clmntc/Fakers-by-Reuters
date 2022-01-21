@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
 import os
 import pickle
+import nltk
+# Modèle + Matrice de fonctionnalités TF-IDF
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(stop_words='english',max_df=0.7)
