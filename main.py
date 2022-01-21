@@ -2,6 +2,8 @@ from flask import Flask, request, render_template
 import os
 import pickle
 import nltk
+stopwords_En = nltk.corpus.stopwords.words('english')
+ps = nltk.PorterStemmer()
 # Modèle + Matrice de fonctionnalités TF-IDF
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
