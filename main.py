@@ -25,10 +25,10 @@ def index():
 @app.route('/predict',methods=['POST'])
 def predict():
     nom = request.form["content"]
-    fake_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Fake_news.png')
+    fake_news_img = 'static/Fake_news.png')
     real_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Real_news.png')
     input = [nom]
-    return render_template("index.html", prediction_text='Employee Salary should be $ {}'.format(input))
+    return render_template("index.html", user_image = fake_news_img)
 
 if __name__ == "__main__":
     app.run(debug=True)
