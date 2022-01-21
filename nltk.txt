@@ -2,4 +2,4 @@ wordnet
 pros_cons
 reuters
 stopwords
-tokenize
+word_tokenize
