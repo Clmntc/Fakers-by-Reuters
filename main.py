@@ -3,6 +3,7 @@ import os
 import pickle
 import nltk
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 stopwords_En = nltk.corpus.stopwords.words('english')
 ps = nltk.PorterStemmer()
 # Modèle + Matrice de fonctionnalités TF-IDF
