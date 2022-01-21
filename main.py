@@ -30,7 +30,7 @@ def predict():
     real_news_img = os.path.join(app.config['UPLOAD_FOLDER'], 'Real_news.png')
     nom = "".join([word.lower() for word in nom if word not in string.punctuation])
     tokens = word_tokenize(nom)
-    nom = " ".join([ps.stem(word) for word in tokens if word not in stopwords_En])
+    # nom = " ".join([ps.stem(word) for word in tokens if word not in stopwords_En])
     input = [nom]
     return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(input))
     # return render_template("index.html", user_image = real_news_img)
